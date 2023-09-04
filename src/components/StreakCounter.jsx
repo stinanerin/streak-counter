@@ -1,21 +1,21 @@
-import { useState } from "react";
 import { Button } from "./Button";
+import { toUpperCaseStr } from "../utility/helpers";
 
-export const StreakCounter = ({ initialStreak = 0 }) => {
-    const [streak, setStreak] = useState(initialStreak);
-
-    const subtractStreak = () => {
-        setStreak((prevState) => prevState - 1);
-    };
-    const addStreak = () => {
-        setStreak((prevState) => prevState + 1);
-    };
-
+export const StreakCounter = ({
+    activity,
+    streakCount,
+    index,
+    addStreak,
+    subtractStreak,
+}) => {
     return (
-        <div>
-            <p>Current streak: {streak}</p>
-            <Button content="+" onClick={addStreak} />
-            <Button content="-" onClick={subtractStreak} />
+        <div className="mb-5">
+            <h3 className="font-bold">{toUpperCaseStr(activity)}</h3>
+            <div className="flex items-center">
+                <Button content="+" onClick={() => addStreak(index)} />
+                <p className="font-bold"> {streakCount}</p>
+                <Button content="-" onClick={() => subtractStreak(index)} />
+            </div>
         </div>
     );
 };

@@ -12,7 +12,7 @@ const routes = [
         page: "Home",
     },
     {
-        route: "/",
+        route: "/create",
         page: "Create",
     },
 ];
@@ -20,12 +20,12 @@ const routes = [
 export const NavBar = () => {
     return (
         <nav>
-            <ul className="flex gap-5 justify-end w-full  px-5 py-3 bg-teal-600">
+            <ul className="flex gap-5 justify-end w-full  px-5 py-3 bg-teal-600 text-white">
                 {routes.map(({ route, page }, index) => {
                     return (
                         <li key={route + index}>
                             <Link
-                                className="font-bold hover:text-emerald-900"
+                                className="font-bold hover:text-emerald-500"
                                 to={route}
                             >
                                 {page}

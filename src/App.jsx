@@ -7,12 +7,14 @@ import {
 
 import { Root } from "./pages/Root";
 import { Home } from "./pages/Home";
+import { Create } from "./pages/Create";
 
 export const App = () => {
     const router = createBrowserRouter(
         createRoutesFromElements(
             <Route path="/" element={<Root />}>
                 <Route index element={<Home />} />
+                <Route path="/create" element={<Create />} />
             </Route>
         )
     );
